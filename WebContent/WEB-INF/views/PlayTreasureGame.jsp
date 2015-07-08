@@ -130,9 +130,6 @@
         
         function winEvent(numRows){
         	var separateAfterGame = '<br style="clear:both" class="after-game"><br class="after-game">';
-//          var winMessage = '<p id="win-message">You found the treasure! :D</p>';
-//             var activateAnimationDirections = '<p id="activate-animation-directions" style="display:none">Click the leprachaun for luck!</p>';
-//             var winPic = '<img class="img-circle" id="win-pic" src="resources/treasure.png" style="position:absolute">';
 			var winContainer = '<p id="win-message"></p>';
 			var winMessage = "You found the treasure! :D";
 			var animationDirectionsContainer = '<p id="animation-directions"></p>';
@@ -141,7 +138,6 @@
             var luckContainer = $('<p id="luck-message"></p>');
             var luckMessage = '+10 Luck recieved!';
             
-//             var luckMessage = '<p id="luck-message" style="opacity:0;float:left;margin-top:220px;">+10 Luck recieved!</p>';
             $("#gameContainer").append(luckContainer, separateAfterGame, winContainer, animationDirectionsContainer)
             .after(winPic);
 
