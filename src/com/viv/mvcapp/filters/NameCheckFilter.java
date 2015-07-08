@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.viv.mvcapp.util.StringManipUtil;
 
-//
+//conflict 1
 @WebFilter(urlPatterns = {"/*"}, description = "Name Check Filter")
 public class NameCheckFilter implements Filter {
     
