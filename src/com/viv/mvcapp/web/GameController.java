@@ -29,12 +29,13 @@ public class GameController {
 	
 	@RequestMapping(value="/TreasureGameController", method = RequestMethod.GET)
 	public @ResponseBody GameState controlTreasureGame(ModelAndView mv, HttpServletRequest request, HttpSession session, @RequestParam("action") String action) {
-		switch (action) {
-        case "start":
+//		switch (action) {
+//        case "start":
+        if ("start".equals(action)) {
        		gameState = new GameState(request.getParameter("numRows"));
-            break;
-            
-        case "move":
+//            break;
+        } else if ("move".equals(action)) {
+//        case "move":
         	int index = Integer.parseInt(request.getParameter("index"));
         	if (index == gameState.getTreasureLocation()) {
         		gameState.setEndTime();
@@ -42,11 +43,11 @@ public class GameController {
         	} else {
         		gameState.setWon(false);
         	}
-            break;
-            
-        default:
-    	   break;
-		}
+//            break;
+        }
+//        default:
+//    	   break;
+//		}
 		return gameState;
 	}
 	
