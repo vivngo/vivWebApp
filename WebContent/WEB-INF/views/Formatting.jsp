@@ -6,8 +6,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 <style>
-#after-nav {
-	margin-top: 0px;
-	margin-left: 50px;
-}
+	#after-nav {
+		margin-top: 0px;
+		margin-left: 50px;
+	}
 </style>

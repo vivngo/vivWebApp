@@ -7,8 +7,10 @@
 <title>Fill out a form</title>
 <jsp:include page="Formatting.jsp" />
 </head>
+
 <body>
  	<jsp:include page="NavBar.jsp" />
+ 	
 	<div id="after-nav">
 		<h1>Hello!</h1>
 		<jsp:include page="Form.jsp" />
