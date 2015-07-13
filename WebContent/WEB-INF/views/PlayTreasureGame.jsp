@@ -7,41 +7,41 @@
 <title>Treasure Hunt!</title>
 <jsp:include page="Formatting.jsp" />
 <style>
-#gameButtonGroup, #win-message, #activate-animation-directions {
-	margin-left: 100px;
-}
-
-.gameButton {
-	width: 50px;
-	height: 50px;
-	color: white;
-	background-color: peru;
-}
-
-#win-pic {
-	margin: 10px 10px 10px 30px;
-}
-
-#luck-message {
-	font-size: xx-large;
-	color: green;
-	float: right;
-	position: absolute;
-	margin-left: 400px;
-}
-
-#numRows_error {
-	margin-left: 413px;
-}
-
-#gameContainer {
-	margin-left: auto;
-	margin-right: auto;
-}
+	#gameButtonGroup, #win-message, #activate-animation-directions {
+		margin-left: 100px;
+	}
+	
+	.gameButton {
+		width: 50px;
+		height: 50px;
+		color: white;
+		background-color: peru;
+	}
+	
+	#win-pic {
+		margin: 10px 10px 10px 30px;
+	}
+	
+	#luck-message {
+		font-size: xx-large;
+		color: green;
+		float: right;
+		position: absolute;
+		margin-left: 400px;
+	}
+	
+	#numRows_error {
+		margin-left: 413px;
+	}
+	
+	#gameContainer {
+		margin-left: auto;
+		margin-right: auto;
+	}
 </style>
 </head>
-<body>
 
+<body>
 	<jsp:include page="NavBar.jsp" />
 
 	<h1>Find the treasure?</h1>
