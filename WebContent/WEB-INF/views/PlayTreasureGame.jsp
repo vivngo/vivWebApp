@@ -7,7 +7,7 @@
 <title>Treasure Hunt!</title>
 <jsp:include page="Formatting.jsp" />
 <style>
-#gameButtonGroup,#win-message,#activate-animation-directions {
+#gameButtonGroup, #win-message, #activate-animation-directions {
 	margin-left: 100px;
 }
 
@@ -68,6 +68,8 @@
 	</div>
 
 	<script>
+		$(document).on('click', '#win-pic', animateImage);
+	
         function generateButtonsFromServletData(generatedArray, numRows) {
             var buttonContentArray = generatedArray;
             
@@ -129,9 +131,6 @@
             });
         }
         
-        
-        $(document).on('click', '#win-pic', animateImage);
-        
         function winEvent(numRows){
         	var separateAfterGame = '<br style="clear:both" class="after-game"><br class="after-game">';
 			var winContainer = '<p id="win-message"></p>';
@@ -167,11 +166,13 @@
   		$("form").submit(function(event) {
 			event.preventDefault();
 			var numRows = $("input[name=numRows]").val();
+			
 			if (numRows === "") {
 				$("label#numRows_error").css("color", "black");
 				$("input[name=numRows]").focus();
 				return false;
 			}
+			
 			$.ajax({
  				url: "TreasureGameController?action=start&index=null&numRows=" + numRows,
              	success: function(data) {
@@ -186,6 +187,7 @@
 		$(document).on("click", ".gameButton", function(event) {
          var button = event.target;
          var buttonIndex = event.target.dataset.index;
+         
          $.ajax({
             url: "TreasureGameController?action=move&index=" + buttonIndex,
             success: function(data) {
