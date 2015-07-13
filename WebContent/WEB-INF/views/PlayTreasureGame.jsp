@@ -115,13 +115,15 @@
             })
             $("#luck-message").animate({
                 opacity: 1
-            }, "fast");
-            $("#luck-message").animate({
-                opacity: 0,
-                marginTop: '0px'
-            }, "slow");
-            $("#luck-message").animate({
-				marginTop: luckMessageMargin
+            }, "fast", function() {
+            	$(this).animate({
+            		opacity: 0,
+            		marginTop: '0px'
+            	}, "slow", function(){
+            		$(this).animate({
+            			marginTop: luckMessageMargin
+            		});
+            	});
             });
         }
         
