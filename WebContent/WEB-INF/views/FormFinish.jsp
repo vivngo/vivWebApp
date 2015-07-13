@@ -6,10 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Result From Form</title>
 <jsp:include page="Formatting.jsp" />
-
 </head>
+
 <body>
 	<jsp:include page="NavBar.jsp" />
+	
 	<div id="after-nav">
 		<h1>I think I know you!</h1>
 		<p>${requestScope.message}
