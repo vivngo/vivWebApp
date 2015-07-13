@@ -72,12 +72,12 @@
             var buttonContentArray = generatedArray;
             
             if ($("#gameButtonGroup").attr("data-game-active") === "true") {
-                $("#gameButtonGroup").empty();
+                $("#gameButtonGroup").empty()
+                	.attr("data-game-won", "false");
                 $("#win-message").remove();
                 $("#win-pic").remove();
                 $("#activate-animation-directions").remove();
                 $("#luck-message").remove();
-                $("#gameButtonGroup").attr("data-game-won", "false");
                 $(".after-game").remove();
             } else {
                 $("#gameButtonGroup").attr("data-game-active", "true");
@@ -100,6 +100,7 @@
         
         function animateImage(){
         	var luckMessageMargin = $("#luck-message").css("margin-top");
+        	
             $("#win-pic").animate({
                 left: '550px',
                 height: '+=35px',
@@ -113,6 +114,7 @@
                     opacity: 1
                 }, "slow");
             })
+            
             $("#luck-message").animate({
                 opacity: 1
             }, "fast", function() {
