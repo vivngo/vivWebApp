@@ -24,8 +24,7 @@
 	<script>
 		$("#displayName").css("background-color", "${color}");
 		
-		if ("${color}" === "purple" || "${color}" === "blue"
-				|| "${color}" === "green" || "${color}" === "red") {
+		if ("${color}" !== "yellow" && "${color}" !== "orange") {
 			$("#displayName").css("color", "white");
 		}
 	</script>
