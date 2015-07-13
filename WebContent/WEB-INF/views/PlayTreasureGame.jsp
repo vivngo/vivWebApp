@@ -89,18 +89,18 @@
                 if (index % numRows === 0) {
                     $("#gameButtonGroup").append('<br>');
                 }
-                var button = $('<button type="button" class="gameButton"></button>').text(element);
-                button.attr("data-index", index);
+                var button = $('<button type="button" class="gameButton"></button>').text(element)
+					.attr("data-index", index);
                 $("#gameButtonGroup").append(button);
             });
         }
         
-        function changeButton(button, color, text){
+        function changeButton(button, color, text) {
             button.style.backgroundColor = color;
             button.innerHTML = text;
         }
         
-        function animateImage(){
+        function animateImage() {
         	var luckMessageMargin = $("#luck-message").css("margin-top");
         	
             $("#win-pic").animate({
@@ -108,14 +108,14 @@
                 height: '+=35px',
                 width: '+=35px',
                 opacity: '0.6'
-            }, "slow", function(){
+            }, "slow", function() {
             	$(this).animate({
                     left: '10px',
                     height: '-=35px',
                     width: '-=35px',
                     opacity: 1
                 }, "slow");
-            })
+            });
             
             $("#luck-message").animate({
                 opacity: 1

@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <div class="container">
 	<form action="#" method="POST" class="form-inline">
+	
 		<div class="form-group">
 			<label for="nameInput">Who are you?</label> <br>
 			<div class="input-group">
@@ -17,6 +18,7 @@
 			</div>
 		</div>
 		<br> <br>
+		
 		<div class="form-group">
 			<label for="colorInput">Pick a color, any color.</label><br> <select
 				name="color" class="form-control">
@@ -29,6 +31,7 @@
 			</select>
 		</div>
 		<br> <br>
+		
 		<button type="submit" name="formSubmit" value="true"
 			class="btn btn-primary">Let's do this!</button>
 	</form>
