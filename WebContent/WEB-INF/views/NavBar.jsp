@@ -44,6 +44,4 @@
 		}
 	});
 
-	// I have changed to contents again again again
-
 </script>
