@@ -44,5 +44,4 @@
 		}
 	});
 
-	//test test test test
 </script>
