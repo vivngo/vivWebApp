@@ -44,6 +44,6 @@
 		}
 	});
 
-	//Look a comment!
+	// I have changed to contents of this comment.
 
 </script>
