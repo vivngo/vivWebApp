@@ -1,4 +1,4 @@
-package com.viv.mvcapp.tests;
+package test.java;
 
 import static org.junit.Assert.*;
 
@@ -80,7 +80,11 @@ public class NameCheckFilterTest {
 		boolean inputContainsScript = (Boolean)request.getAttribute("inputContainsScript");
 		assertTrue("did not catch script", inputContainsScript);
 		
+		
+		chain = new MockFilterChain();
+		response = new MockHttpServletResponse();		
 		request = new MockHttpServletRequest(context);
+		
 		request.addParameter("firstName", "friendly");
 		request.addParameter("lastName", "text");
 		request.addParameter("formSubmit", "true");

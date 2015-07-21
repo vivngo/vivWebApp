@@ -1,4 +1,4 @@
-package com.viv.mvcapp.tests;
+package test.java;
 
 import static org.junit.Assert.*;
 

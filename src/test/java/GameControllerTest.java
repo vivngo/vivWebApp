@@ -1,4 +1,4 @@
-package com.viv.mvcapp.tests;
+package test.java;
 
 import static org.junit.Assert.*;
 
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.viv.mvcapp.domain.GameState;
 import com.viv.mvcapp.web.GameController;
 
-public class GameControllerController {
+public class GameControllerTest {
 
 	@Test
 	public void testControlTreasureGameStart() {
