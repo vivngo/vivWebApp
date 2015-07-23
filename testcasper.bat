@@ -1,1 +1,1 @@
-mvn -Dmaven.test.skip=true verify
+mvn -Dmaven.test.skip=true -Dmaven.package.skip=true verify
