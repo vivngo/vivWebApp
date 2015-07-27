@@ -12,7 +12,7 @@
  	<jsp:include page="NavBar.jsp" />
  	
 	<div id="after-nav">
-		<h1>Hello! <span style="color: red;">You are all Awesome!</span>!</h1>
+		<h1>Hello! You are all Awesome!!</h1>
 		<jsp:include page="Form.jsp" />
 	</div>
 </body>
