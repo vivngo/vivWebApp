@@ -174,37 +174,37 @@
 			}
 			
 			$.ajax({
- 				url: "TreasureGameController?action=start&index=null&numRows=" + numRows,
-             	success: function(data) {
-            		generateButtonsFromServletData(data.buttonText, numRows);
-             	},
-             	error: function(data) {
-             	 	alert("Unable to contact server to control game\n" + data);
-             	}
-			});
+ 				url: "TreasureGameController?action=start&index=null&numRows=" + numRows
+			})
+			.done(function(data) {
+        		generateButtonsFromServletData(data.buttonText, numRows);
+         	})
+			.fail(function(data) {
+         	 	alert("Unable to contact server to control game\n" + data);
+         	});
 		});
 
 		$(document).on("click", ".gameButton", function(event) {
-         var button = event.target;
-         var buttonIndex = event.target.dataset.index;
-         
-         $.ajax({
-            url: "TreasureGameController?action=move&index=" + buttonIndex,
-            success: function(data) {
-                if (data.won === true) {
-                    changeButton(button, "green", "!!");
-                    if($("#gameButtonGroup").attr("data-game-won") === "false") {
-                         winEvent(data.numRows);
-                         $("#gameButtonGroup").attr("data-game-won", "true");
-                    }
-                } else {
-                    changeButton(button, "brown", "x");
-                }
-            },
-            failure: function(data) {
-         	   alert("Unable to contact server");
-            }
-     	});
+	         var button = event.target;
+	         var buttonIndex = event.target.dataset.index;
+	         
+	         $.ajax({
+	            url: "TreasureGameController?action=move&index=" + buttonIndex
+	     	})
+	     	.done(function(data) {
+	            if (data.won === true) {
+	                changeButton(button, "green", "!!");
+	                if($("#gameButtonGroup").attr("data-game-won") === "false") {
+	                     winEvent(data.numRows);
+	                     $("#gameButtonGroup").attr("data-game-won", "true");
+	                }
+	            } else {
+	                changeButton(button, "brown", "x");
+	            }
+	        })
+	     	.fail(function(data) {
+	      	   alert("Unable to contact server");
+	        });
 		});
 	</script>
 </body>
