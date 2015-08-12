@@ -27,21 +27,32 @@
 </div>
 
 <script>
-	if (${inputContainsScript}) {
-    	alert("You put in a script");
-	}
+	(function(){
+		var checkForCrossSiteScripting = function checkForCrossSiteScripting() {
+			if (${inputContainsScript}) {
+		    	alert("You put in a script");
+			}
+		};
+		var getWeatherInfo = function getWeatherInfo() {
+			$.ajax({
+				url: "http://api.openweathermap.org/data/2.5/weather?zip=75038,us"
+			})
+			.done(function(data) {
+				var weatherInfo = "The weather today in " + data.name + ": " + data.weather[0].description + "";
+				$("#weatherInfo").append(weatherInfo);
+			})
+			.fail(function(data) {
+				alert("Unable to reach weather API");
+			});
+		};
+		
+		$(document).ready(function() {
+			checkForCrossSiteScripting();
+			getWeatherInfo();
+		});
+	}());
 	
-	$.ajax({
-		url: "http://api.openweathermap.org/data/2.5/weather?zip=75038,us"
-	})
-	.done(function(data) {
-		var weatherInfo = "The weather today in " + data.name + ": " + data.weather[0].description + "";
-		$("#weatherInfo").append(weatherInfo);
-	})
-	.fail(function(data) {
-		alert("Unable to reach weather API");
-	});
-
-	//test
+	
+	
 
 </script>

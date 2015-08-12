@@ -23,10 +23,21 @@
 	</div>
 
 	<script>
-		$("#displayName").css("background-color", "${color}");
+	(function() {
+		var changeNameBackgroundColor = function changeNameBackgroundColor() {
+			$("#displayName").css("background-color", "${color}");
+		};
 		
-		if ("${color}" !== "yellow" && "${color}" !== "orange") {
-			$("#displayName").css("color", "white");
-		}
+		var changeNameTextColor = function changeNameTextColor() { 
+			if ("${color}" !== "yellow" && "${color}" !== "orange") {
+				$("#displayName").css("color", "white");
+			}
+		};
+		
+		$(document).ready(function() {
+			changeNameBackgroundColor();
+			changeNameTextColor();
+		});
+	}());
 	</script>
 </body>
