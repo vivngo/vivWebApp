@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -34,14 +32,14 @@
 	}
 	
 	$.ajax({
-		url: "http://api.openweathermap.org/data/2.5/weather?zip=75038,us",
-		success: function(data) {
-			var weatherInfo = "The weather today in " + data.name + ": " + data.weather[0].description + "";
-			$("#weatherInfo").append(weatherInfo);
-		},
-		error: function(data) {
-			alert("Unable to reach weather API");
-		}
+		url: "http://api.openweathermap.org/data/2.5/weather?zip=75038,us"
+	})
+	.done(function(data) {
+		var weatherInfo = "The weather today in " + data.name + ": " + data.weather[0].description + "";
+		$("#weatherInfo").append(weatherInfo);
+	})
+	.fail(function(data) {
+		alert("Unable to reach weather API");
 	});
 
 	//test
