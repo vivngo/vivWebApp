@@ -28,6 +28,7 @@
 
 <script>
 	(function(){
+		'use strict';
 		var checkForCrossSiteScripting = function checkForCrossSiteScripting() {
 			if (${inputContainsScript}) {
 		    	alert("You put in a script");

@@ -69,6 +69,7 @@
 
 	<script>
 	(function(){
+		'use strict';
         var generateButtonsFromServletData = function generateButtonsFromServletData(generatedArray, numRows) {
             var buttonContentArray = generatedArray;
             
@@ -183,7 +184,8 @@
          	});
 		});
 
-		$(document).on("click", ".gameButton", function(event) {
+  		$(document).off('.gameButton')
+		.on("click", ".gameButton", function(event) {
 	         var button = event.target;
 	         var buttonIndex = event.target.dataset.index;
 	         
@@ -206,7 +208,8 @@
 	        });
 		});
 		
-		$(document).on('click', '#win-pic', animateImage);
+		$(document).off('#win-pic')
+		.on('click', '#win-pic', animateImage);
 	}());
 	</script>
 </body>

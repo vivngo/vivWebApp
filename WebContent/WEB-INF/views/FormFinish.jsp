@@ -24,6 +24,7 @@
 
 	<script>
 	(function() {
+		'use strict';
 		var changeNameBackgroundColor = function changeNameBackgroundColor() {
 			$("#displayName").css("background-color", "${color}");
 		};
