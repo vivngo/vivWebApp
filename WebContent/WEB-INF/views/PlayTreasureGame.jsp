@@ -68,9 +68,8 @@
 	</div>
 
 	<script>
-		$(document).on('click', '#win-pic', animateImage);
-	
-        function generateButtonsFromServletData(generatedArray, numRows) {
+	(function(){
+        var generateButtonsFromServletData = function generateButtonsFromServletData(generatedArray, numRows) {
             var buttonContentArray = generatedArray;
             
             if ($("#gameButtonGroup").attr("data-game-active") === "true") {
@@ -93,14 +92,14 @@
 					.attr("data-index", index);
                 $("#gameButtonGroup").append(button);
             });
-        }
+        };
         
-        function changeButton(button, color, text) {
+        var changeButton = function changeButton(button, color, text) {
             button.style.backgroundColor = color;
             button.innerHTML = text;
-        }
+        };
         
-        function animateImage() {
+        var animateImage = function animateImage() {
         	var luckMessageMargin = $("#luck-message").css("margin-top");
         	
             $("#win-pic").animate({
@@ -129,9 +128,9 @@
             		});
             	});
             });
-        }
+        };
         
-        function winEvent(numRows){
+        var winEvent = function winEvent(numRows){
         	var separateAfterGame = '<br style="clear:both" class="after-game"><br class="after-game">';
 			var winContainer = '<p id="win-message"></p>';
 			var winMessage = "You found the treasure! :D";
@@ -161,7 +160,7 @@
             }).text(luckMessage);
             
             $("#activate-animation-directions").fadeIn("30000");
-        }
+        };
         
   		$("form").submit(function(event) {
 			event.preventDefault();
@@ -206,5 +205,8 @@
 	      	   alert("Unable to contact server");
 	        });
 		});
+		
+		$(document).on('click', '#win-pic', animateImage);
+	}());
 	</script>
 </body>
