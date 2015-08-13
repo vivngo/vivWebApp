@@ -65,6 +65,7 @@
 	<div id="gameContainer">
 		<div class="btn-group" id="gameButtonGroup" data-game-active="false"
 			data-game-won="false" style="float: left"></div>
+		<!--  remove inline style -->
 	</div>
 
 	<script>
@@ -85,24 +86,29 @@
                 $("#gameButtonGroup").attr("data-game-active", "true");
             }
             
+            var buttons = $('<div />');
+            
             buttonContentArray.forEach(function(element, index) {
                 if (index % numRows === 0) {
-                    $("#gameButtonGroup").append('<br>');
+                    buttons.append('<br>');
                 }
                 var button = $('<button type="button" class="gameButton"></button>').text(element)
 					.attr("data-index", index);
-                $("#gameButtonGroup").append(button);
+                buttons.append(button);
             });
+            
+            $("#gameButtonGroup").append(buttons.html());
         };
         
         var changeButton = function changeButton(button, color, text) {
-            button.style.backgroundColor = color;
+            button.style.backgroundColor = color;	//use jQuery or JS, not both
             button.innerHTML = text;
         };
         
         var animateImage = function animateImage() {
         	var luckMessageMargin = $("#luck-message").css("margin-top");
         	
+        	//Use CSS animation instead of jQuery
             $("#win-pic").animate({
                 left: '550px',
                 height: '+=35px',
@@ -146,9 +152,8 @@
 
             $("#win-message").text(winMessage);
             
-            $("#animation-directions").css({
-            	'display': 'none'
-            }).text(animationDirections);
+            $("#animation-directions").hide()
+            .text(animationDirections);
             
             $('#win-pic').css({
             	'position': 'absolute'
@@ -193,7 +198,7 @@
 	            url: "TreasureGameController?action=move&index=" + buttonIndex
 	     	})
 	     	.done(function(data) {
-	            if (data.won === true) {
+	            if (data.won) {
 	                changeButton(button, "green", "!!");
 	                if($("#gameButtonGroup").attr("data-game-won") === "false") {
 	                     winEvent(data.numRows);

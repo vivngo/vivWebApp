@@ -47,13 +47,9 @@
 			});
 		};
 		
-		$(document).ready(function() {
+		$(document).ready(function() {	//one "gloabl" JS file with document.ready
 			checkForCrossSiteScripting();
 			getWeatherInfo();
 		});
 	}());
-	
-	
-	
-
 </script>

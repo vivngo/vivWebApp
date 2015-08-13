@@ -8,3 +8,6 @@
 		margin-left: 50px;
 	}
 </style>
+
+
+//Rename Static.jsp

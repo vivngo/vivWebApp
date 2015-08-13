@@ -25,6 +25,10 @@
 	<script>
 	(function() {
 		'use strict';
+		
+		//HTTP Status 201
+		//Content negotiation
+		//Use predefined CSS classes for each color
 		var changeNameBackgroundColor = function changeNameBackgroundColor() {
 			$("#displayName").css("background-color", "${color}");
 		};
